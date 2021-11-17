@@ -1,0 +1,92 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Protección de la BIOS/UEFI</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="Práctica 1.1.1"
+                  title="Protección de la BIOS/UEFI"
+                  environment="web"
+                  feedback-link="https://github.com/JesusJimenezSantana/HARDENING/issues">
+    
+      <google-codelab-step label="Bastionado BIOS/UEFI en la BIOS vC1CN12WW de un Lenovo M41-70" duration="15">
+        <h2 is-upgraded>Configurar una contraseña de arranque</h2>
+<p>Para configurar una contraseña de arranque o de usuario primero deberemos haber configurado una contraseña de administrador. Una vez configurado la contraseña de administrador podremos elegir la opción &#34;User password&#34; y la configuraremos:</p>
+<p class="image-container"><img alt="UserPasswordLenovo" src="img\ead363d310195591.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Contraseña de administrador" duration="15">
+        <h2 is-upgraded>Configuración</h2>
+<p>Para configurar una contraseña de administrador nos iremos a la pestaña &#34;Security&#34; y elegiremos la opción &#34;Set Administrator Password&#34; para establecer la contraseña:</p>
+<p class="image-container"><img alt="Adminpasswordlenovo" src="img\a08709897f20ad23.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Arranque desde dispositivos externos" duration="15">
+        <h2 is-upgraded>Configuración</h2>
+<p>Para configurar el arranque de la BIOS desde dispositivos externos nos iremos a la pestaña &#34;Boot&#34; y seleccionaremos las opciones que necesitemos, en este caso para asegurar nuestra BIOS deshabilitaremos las opciones de arranque desde USB y desde la red(PXE):</p>
+<p class="image-container"><img alt="Arranqueexterno" src="img\c8cac708dfe61435.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Orden de arranque seguro" duration="15">
+        <h2 is-upgraded>Configuración</h2>
+<p>Primero iremos a la pestaña &#34;Boot&#34; y veremos un orden de arranque preestablecido que podremos personalizar a nuestras necesidades, en este caso para personalizar un orden seguro(recordemos que las opciones de USB y red estarán desactivadas) elegiremos el siguiente orden:</p>
+<ul>
+<li>Primero elegiremos el disco duro que tengamos instalado</li>
+<li>De segunda opción un disquete USB(USB FDD)</li>
+<li>A continuación un disco duro USB(USB HDD)</li>
+<li>Luego un disco CD</li>
+<li>Y como últimas opciones elegiremos las opciones de red (primero IPv4 y luego IPv6)</li>
+</ul>
+<p class="image-container"><img alt="OrdenBootLenovo" src="img\6a08c4cbfdb3725d.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Otras opciones de seguridad" duration="15">
+        <h2 is-upgraded>Configuraciones adicionales</h2>
+<p>Si queremos añadir algo más de seguridad a nuestra BIOS en ese caso podemos habilitar un par de configuraciones extra como:</p>
+<ul>
+<li>Configurar una contraseña para todos los discos duros instalados<br>Para ello iremos a la pestaña &#34;Security&#34; y seleccionamos la opción &#34;Set Hard Disk Password&#34; para establecerla(para esto necesitamos la contraseña de administrador y de usuario):</li>
+</ul>
+<p class="image-container"><img alt="HDDpasswordLenovo" src="img\ffe2723c573c7b21.png"></p>
+<ul>
+<li>Habilitar Secure Boot<br>Secure Boot es una opción de seguridad de la BIOS que impide que se ejecute software no firmado o certificado durante el boot.<br>Para habilitar esta opción iremos a la pestaña &#34;Security&#34; y habilitaremos &#34;Secure Boot&#34;(no nos pedirá ninguna contraseña):</li>
+</ul>
+<p class="image-container"><img alt="SecureBootLenovo" src="img\4e57d16f81fe5ac4.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>
