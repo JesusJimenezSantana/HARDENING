@@ -1,0 +1,93 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Protección de la BIOS/UEFI</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="Práctica 1.1.2"
+                  title="Protección de la BIOS/UEFI"
+                  environment="web"
+                  feedback-link="https://github.com/JesusJimenezSantana/HARDENING/issues">
+    
+      <google-codelab-step label="Bastionado BIOS/UEFI de la BIOS v2.20.1271 de un MSI GP75 Leopard 9SF MS-17E2" duration="15">
+        <h2 is-upgraded>Configurar una contraseña de arranque</h2>
+<p>Para configurar una contraseña de arranque nos moveremos a la pestaña &#34;Security&#34; y elegiremos la opción &#34;User password&#34; y la configuraremos:</p>
+<p class="image-container"><img alt="UserPasswordMSI" src="img\76eeb0760f20fd4a.png"></p>
+<p>Una vez configurada deberemos habilitar el checkup de la contraseña:</p>
+<p class="image-container"><img alt="PasswordCheckMSI" src="img\11296846dcdd8c2c.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Contraseña de administrador" duration="15">
+        <h2 is-upgraded>Configuración</h2>
+<p>Para configurar una contraseña de administrador nos iremos a la pestaña &#34;Security&#34; y elegiremos la opción &#34;Administrator Password&#34; para establecer la contraseña:</p>
+<p class="image-container"><img alt="AdminPasswordMSI" src="img\201b409c299cdcdd.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Configurar arranque desde dispositivos externos" duration="15">
+        <h2 is-upgraded>Configuración</h2>
+<p>Para configurar el arranque de la BIOS desde dispositivos externos primero nos iremos a la pestaña &#34;Advanced&#34; y seleccionaremos las opciones que necesitemos, en este caso para asegurar nuestra BIOS deshabilitaremos las opciones:</p>
+<ul>
+<li>Wake up On LAN S5 Support</li>
+<li>Network Stack</li>
+</ul>
+<p class="image-container"><img alt="ArranqueExternoMSI1" src="img\8f419c86605d45a1.png"></p>
+<p>Además deberemos eliminar las opciones de Boot desde USB y desde red en el menú de orden de arranque en la pestaña &#34;Boot&#34;:</p>
+<p class="image-container"><img alt="ArranqueExternoMSI2" src="img\a7a5e43f16786e7d.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Configurar orden de arranque seguro" duration="15">
+        <h2 is-upgraded>Configuración</h2>
+<p>Primero iremos a la pestaña &#34;Boot&#34; y veremos un orden de arranque preestablecido que podremos personalizar a nuestras necesidades, en este caso al haber eliminado las opciones de USB y network para un boot seguro, solo nos quedaría la opción de disco duro:</p>
+<p class="image-container"><img alt="OrdendeArranqueMSI" src="img\6df2c72d89124e30.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Otras opciones de seguridad" duration="15">
+        <h2 is-upgraded>Configuraciones adicionales</h2>
+<p>Si queremos añadir algo más de seguridad a nuestra BIOS en ese caso podemos habilitar un par de configuraciones extra como:</p>
+<ul>
+<li>Habilitar Intel® BIOS Guard Technology<br>Intel BIOS Guard Technology es una opción de seguridad en las BIOS Intel a partir de Windows 8 que funciona igual que Secure Boot, por lo que con esto añadiremos una capa de seguridad extra en caso de que el Secure Boot falle.<br>Para habilitarlo iremos a la pestaña &#34;Advanced&#34; y seleccionaremos &#34;Intel® BIOS Guard Technology&#34;:</li>
+</ul>
+<p class="image-container"><img alt="IntelGuardMSI" src="img\567e8767d41a9fb7.png"></p>
+<ul>
+<li>Habilitar Secure Boot<br>Secure Boot es una opción de seguridad de la BIOS que impide que se ejecute software no firmado o certificado durante el boot.<br>Para habilitar esta opción iremos a la pestaña &#34;Security&#34; y habilitaremos &#34;Secure Boot&#34;(no nos pedirá ninguna contraseña):</li>
+</ul>
+<p class="image-container"><img alt="SecureBootMSI" src="img\6e8937cf5321b7af.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>

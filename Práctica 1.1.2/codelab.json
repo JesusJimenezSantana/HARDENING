@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2021-11-17T10:45:35+01:00",
+  "id": "Práctica 1.1.2",
+  "duration": 75,
+  "title": "Protección de la BIOS/UEFI",
+  "summary": "Práctica 1.1.2",
+  "source": "codelab1.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/JesusJimenezSantana/HARDENING/issues",
+  "url": "Práctica 1.1.2"
+}
