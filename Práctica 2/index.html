@@ -1,0 +1,62 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Configuración de rutas dinámicas de enrutamiento utilizando OSPFv2</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="Práctica 2"
+                  title="Configuración de rutas dinámicas de enrutamiento utilizando OSPFv2"
+                  environment="web"
+                  feedback-link="https://github.com/JesusJimenezSantana/HARDENING/issues">
+    
+      <google-codelab-step label="Configurar las redes en los routers" duration="10">
+        <h2 is-upgraded>Configuración</h2>
+<p>Primero entraremos en el modo de configuración y luego escribimos: router ospf 1(ID:debe ser el mismo en todos los routers).<br>Y luego vamos añadiendo las redes conectadas directamente al router y su WILDCARD (máscara inversa de red), y un area de efecto la cuál estableceremos como 0 si no es OSPF multiárea:</p>
+<p class="image-container"><img alt="routerOspf" src="img\a5973bb9c23ce3c6.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Configurar las interfaces pasivas" duration="10">
+        <h2 is-upgraded>Configuración</h2>
+<p>Configuraremos en cada router unas interfaces pasivas, éstas no mandarán los paquetes OSPF por lo que reduciremos el tráfico de red.<br>Para esto entraremos en la configuración global del router y desde ahí a la configuración de OSPF donde introduciremos las interfaces que queramos configurar como pasivas:</p>
+<p class="image-container"><img alt="interfacespasivas" src="img\7bf6e482119dac60.png"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Configurar encriptación md5" duration="10">
+        <h2 is-upgraded>Configuración</h2>
+<p>Primero habilitaremos los mensajes encriptados en cada router, para ello iremos a la configuración de OSPF.<br>Luego tendremos que encriptar los mensajes para cada interfaz, para esto vamos a cada interfaz y le estableceremos una contraseña encriptada por md5 (DEBE SER LA MISMA ENTRE VECINOS):</p>
+<p class="image-container"><img alt="ospfmd5" src="img\ae057eb5ef67a794.png"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>
